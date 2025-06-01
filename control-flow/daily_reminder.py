@@ -22,6 +22,5 @@ if time_bound == "yes":
 else:
     reminder += ". Consider completing it when you have free time."
 
-# Loop to print the reminder 3 times
-for _ in range(3):
-    print("\nReminder:", reminder)
+# Display the final reminder
+print(reminder)
