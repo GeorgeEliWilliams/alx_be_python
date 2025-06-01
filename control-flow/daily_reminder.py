@@ -19,6 +19,9 @@ match priority:
 # Check time sensitivity
 if time_bound == "yes":
     reminder += " that requires immediate attention today!"
+else:
+    reminder += ". Consider completing it when you have free time."
 
-# Display the final reminder
-print("\nReminder:", reminder)
+# Loop to print the reminder 3 times
+for _ in range(3):
+    print("\nReminder:", reminder)
