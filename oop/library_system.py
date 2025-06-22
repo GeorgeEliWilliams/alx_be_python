@@ -4,7 +4,7 @@ class Book:
         self.title = title
         self.author = author
 
-    def get_details(self):
+    def __str__(self):
         return f"Book: {self.title} by {self.author}"
 
 
@@ -14,7 +14,7 @@ class EBook(Book):
         super().__init__(title, author)
         self.file_size = file_size
 
-    def get_details(self):
+    def __str__(self):
         return f"EBook: {self.title} by {self.author}, File Size: {self.file_size}KB"
 
 
@@ -24,18 +24,18 @@ class PrintBook(Book):
         super().__init__(title, author)
         self.page_count = page_count
 
-    def get_details(self):
+    def __str__(self):
         return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
 
 
 # Composition: Library class
 class Library:
     def __init__(self):
-        self.books = []  # Holds instances of Book, EBook, and PrintBook
+        self.books = []
 
     def add_book(self, book):
         self.books.append(book)
 
     def list_books(self):
         for book in self.books:
-            print(book.get_details())
+            print(book)  # This automatically calls __str__()
